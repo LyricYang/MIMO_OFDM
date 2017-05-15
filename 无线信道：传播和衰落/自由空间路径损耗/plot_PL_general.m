@@ -15,18 +15,24 @@ end
 %自由路径损耗模型
 figure(1);
 semilogx(distance,y_Free(1,:),'k-o',distance,y_Free(2,:),'b-^',distance,y_Free(3,:),'r-s')
-grid on, axis([1 1000 40 110]), title(['Free PL Models, f_c=',num2str(fc/1e6),'MHz'])
-xlabel('Distance[m]'), ylabel('Path loss[dB]')
-legend('G_t=1, G_r=1','G_t=1, G_r=0.5','G_t=0.5, G_r=0.5',2)
+grid on, axis([1 1000 40 110]);
+title(['Free PL Models, f_c=',num2str(fc/1e6),'MHz'])
+xlabel('Distance[m]');
+ylabel('Path loss[dB]');
+legend('G_t=1, G_r=1','G_t=1, G_r=0.5','G_t=0.5, G_r=0.5');
 %对数路径损耗模型
 figure(2)
 semilogx(distance,y_logdist(1,:),'k-o',distance,y_logdist(2,:),'b-^',distance,y_logdist(3,:),'r-s')
 grid on, axis([1 1000 40 110]),
 title(['Log-distance PL model, f_c=',num2str(fc/1e6),'MHz'])
-xlabel('Distance[m]'), ylabel('Path loss[dB]'), legend('n=2','n=3','n=6',2)
+xlabel('Distance[m]');
+ylabel('Path loss[dB]');
+legend('n=2','n=3','n=6');
 %对数正态阴影路径损耗模型
 figure(3)
 semilogx(distance,y_lognorm(1,:),'k-o',distance,y_lognorm(2,:),'b-^',distance,y_lognorm(3,:),'r-s')
 grid on, axis([1 1000 40 110]),
 title(['Log-normal PL model, f_c=',num2str(fc/1e6),'MHz, ','\sigma=', num2str(sigma), 'dB'])
-xlabel('Distance[m]'), ylabel('Path loss[dB]'), legend('path 1','path 2','path 2',2)
+xlabel('Distance[m]');
+ylabel('Path loss[dB]');
+legend('path 1','path 2','path 2');
